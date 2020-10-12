@@ -60,11 +60,15 @@ label, input {
     left: 20px;
     border-radius: 50%;
   }
-  
+  .unclickable {
+      pointer-events: none;
+  }
+
   .game-btn {
     position: absolute;
     height: 220px;
     width: 220px;
+    transition: 0.15s; 
   }
   .game-btn.top-left {
     top: 20px;
@@ -72,24 +76,56 @@ label, input {
     background-color: #2659a9;
     border-radius: 100% 0 0 0;
   }
+
+  .game-btn.top-left :active,
+  .game-btn.top-left.activated {
+    box-shadow: 0 0 0 1px #2bbcff inset, 0 0 0 2px rgba(255, 255, 255, 0.15) inset, 0 0 0 1px rgba(0, 0, 0, 0.4);
+    background-color: #2bbcff;
+    transform: translateY(10px);
+  }
+
   .game-btn.top-right {
     top: 20px;
     right: 20px;
     background-color: #d62626;
     border-radius: 0 100% 0 0;
   }
+  .game-btn.top-right :active,
+  .game-btn.top-right.activated {
+    box-shadow: 0 0 0 1px #ff5c36 inset, 0 0 0 2px rgba(255, 255, 255, 0.15) inset, 0 0 0 1px rgba(0, 0, 0, 0.4);
+    background-color: #ff5c36;
+    transform: translateY(10px); 
+  }
+
+
   .game-btn.bottom-right {
     bottom: 20px;
     right: 20px;
     background-color: #eec026;
     border-radius: 0 0 100% 0;
   }
+  .game-btn.bottom-right :active,
+  .game-btn.bottom-right.activated {
+    box-shadow: 0 0 0 1px #ffca3d inset, 0 0 0 2px rgba(255, 255, 255, 0.15) inset, 0 0 0 1px rgba(0, 0, 0, 0.4);
+    background-color: #ffca3d;
+    transform: translateY(10px);
+  }
+
+
   .game-btn.bottom-left {
     bottom: 20px;
     left: 20px;
     background-color: #26b644;
     border-radius: 0 0 0 100%;
   }
+  .game-btn.bottom-left :active,
+  .game-btn.bottom-left.game-btn.bottom-right.activated {
+    box-shadow: 0 0 0 1px #a0ea00 inset, 0 0 0 2px rgba(255, 255, 255, 0.15) inset, 0 0 0 1px rgba(0, 0, 0, 0.4);
+    background-color: #a0ea00;
+    transform: translateY(10px);
+  }
+
+
   .game-btn:hover {
     cursor: pointer;
   }
