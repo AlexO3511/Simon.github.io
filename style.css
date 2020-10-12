@@ -3,9 +3,6 @@ label, input {
     -webkit-appearance: none;
   }
   
-  /* button:focus {
-    outline: none;
-  } */
   
   html, body {
     background: #333;
@@ -17,7 +14,7 @@ label, input {
     text-align: center;
   }
   
-  .row {
+  .start {
     margin-top: -40px;
 
   }
@@ -119,7 +116,7 @@ label, input {
     border-radius: 0 0 0 100%;
   }
   .game-btn.bottom-left :active,
-  .game-btn.bottom-left.game-btn.bottom-right.activated {
+  .game-btn.bottom-left.activated {
     box-shadow: 0 0 0 1px #a0ea00 inset, 0 0 0 2px rgba(255, 255, 255, 0.15) inset, 0 0 0 1px rgba(0, 0, 0, 0.4);
     background-color: #a0ea00;
     transform: translateY(10px);

@@ -4,7 +4,8 @@ let sequence = [];
 let humanSequence = [];
 let level = 0;
 
-const newGameBtn = document.querySelector('#newGame');
+//const newGameBtn = document.querySelector('#newGame');
+const newGameBtn = document.querySelector('#game');
 
 const btnContainer = document.querySelector('.button-container')
 
@@ -49,12 +50,14 @@ function nextStep() {
 function nextRound(){
     //level will be incremented by 1 and next sequence will be prepared
     level += 1;
+    let scoreBoard = document.getElementById("score-screen")
     //Adds unclickable class until user turn
     btnContainer.classList.add('unclickable');
-    // copy all eleemts in the 'sequence' array to 'nextSequence'
+    //ES6 copy all eleemts in the 'sequence' array to 'nextSequence'
     const nextSequence = [...sequence];
     nextSequence.push(nextStep());
     playRound(nextSequence);
+
     console.log(level);
 
     //timeout will will execute yourTurn 1 second after last button in the sequence is activated
@@ -94,6 +97,7 @@ function startGame (){
     nextRound();
     console.log("Wait for computer")
 }
+
 newGameBtn.addEventListener('click', startGame)
 
 btnContainer.addEventListener('click', event => {
