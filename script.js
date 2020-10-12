@@ -6,6 +6,20 @@ let level = 0;
 
 const newGameBtn = document.querySelector('#newGame');
 
+const btnContainer = document.querySelector('.button-container')
+
+function resetGame(text) {
+    alert(text);
+    sequence = [];
+    humanSequence = [];
+    level = 0;
+    btnContainer.classList.add('unclickable');
+}
+
+function yourTurn(level) {
+    btnContainer.classList.remove('unclickable')
+}
+
 function activateTile(color) {
     const tile = document.querySelector(`[data-tile='${color}']`);
 
@@ -35,14 +49,56 @@ function nextStep() {
 function nextRound(){
     //level will be incremented by 1 and next sequence will be prepared
     level += 1;
+    //Adds unclickable class until user turn
+    btnContainer.classList.add('unclickable');
     // copy all eleemts in the 'sequence' array to 'nextSequence'
     const nextSequence = [...sequence];
     nextSequence.push(nextStep());
     playRound(nextSequence);
     console.log(level);
+
+    //timeout will will execute yourTurn 1 second after last button in the sequence is activated
+    sequence = [...nextSequence]
+    setTimeout(() => {
+        yourTurn(level);
+        console.log("Your Turn")
+    }, level * 600 + 1000);
 }
+function handleClick(tile) {
+    const index = humanSequence.push(tile) - 1; 
+    const remainingClicks = sequence.length - humanSequence.length; 
+
+    if (humanSequence[index] != sequence[index]){
+        resetGame('Oops! Game over, you pressed the wrong tile!');
+        return; 
+    }
+
+        //if compares the length of humanSequence to sequence. If equal round is over and nextRound should be called 
+    if (humanSequence.length === sequence.length) {
+        if (humanSequence.length === 20){
+            resetGame('Congrats! You completed all the levels!');
+            return
+        }
+
+        humanSequence = [];
+        console.log("Ok! Keep going!");
+        setTimeout(() => {
+            nextRound();
+        }, 1000);
+        return;
+    }
+    console.log(`You have ${remainingClicks} clicks left`)
+}
+
 function startGame (){
     nextRound();
+    console.log("Wait for computer")
 }
 newGameBtn.addEventListener('click', startGame)
+
+btnContainer.addEventListener('click', event => {
+    const { tile } = event.target.dataset
+
+    if (tile) handleClick(tile);
+})
 
