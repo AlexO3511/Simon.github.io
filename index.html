@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simon!</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div>
+        <header>Welcome to Simon! Let's Play!</header>
+        <main>
+            <gamestatus>
+                <user>Player 1</user>
+                <label for="file">Progress:</label>
+                <progress id="file" value="0" max="100"> O% </progress>
+                <button id="newGame">New Game!</button>
+            </gamestatus>
+            <div class = "play-area">
+                <div id="btn0" class="game-btn top-left"></div>
+                <div id="btn1" class="game-btn top-right"></div>
+                <div id="btn2" class="game-btn bottom-right"></div>
+                <div id="btn3" class="game-btn bottom-left"></div>
+                <div class="center-circle">
+                <div class="center-panel">
+                <p class="game-title">Simon!</p>
+                <div class="row">
+                    <input id="score-screen" placeholder="--" disabled>
+                </div>
+            </div>
+
+        </main>
+    </div>
+    <script src = "script.js"></script>
+</body>
+</html>
