@@ -4,6 +4,7 @@ let sequence = [];
 let humanSequence = [];
 let level = 0;
 const instructions = document.querySelector('.Instructions')
+const currentLevel = document.querySelector('.Level')
 console.log(instructions)
 
 //const newGameBtn = document.querySelector('#newGame');
@@ -58,6 +59,7 @@ function nextRound(){
     nextSequence.push(nextStep());
     playRound(nextSequence);
     instructions.innerHTML = 'Wait for computer';
+    currentLevel.innerHTML = `Level ${level}`
 
     console.log(level);
 
