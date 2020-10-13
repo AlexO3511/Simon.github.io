@@ -3,6 +3,8 @@ console.log("We live Babbbbyyyyy!")
 let sequence = [];
 let humanSequence = [];
 let level = 0;
+const instructions = document.querySelector('.Instructions')
+console.log(instructions)
 
 //const newGameBtn = document.querySelector('#newGame');
 const newGameBtn = document.querySelector('#game');
@@ -15,6 +17,7 @@ function resetGame(text) {
     humanSequence = [];
     level = 0;
     btnContainer.classList.add('unclickable');
+    newGameBtn.classList.remove('unclickable')
 }
 
 function yourTurn(level) {
@@ -23,9 +26,7 @@ function yourTurn(level) {
 
 function activateTile(color) {
     const tile = document.querySelector(`[data-tile='${color}']`);
-
     tile.classList.add('activated');
-
     setTimeout(() => {
         tile.classList.remove('activated');
     }, 300);
@@ -50,13 +51,13 @@ function nextStep() {
 function nextRound(){
     //level will be incremented by 1 and next sequence will be prepared
     level += 1;
-    let scoreBoard = document.getElementById("score-screen")
     //Adds unclickable class until user turn
     btnContainer.classList.add('unclickable');
     //ES6 copy all eleemts in the 'sequence' array to 'nextSequence'
     const nextSequence = [...sequence];
     nextSequence.push(nextStep());
     playRound(nextSequence);
+    instructions.innerHTML = 'Wait for computer';
 
     console.log(level);
 
@@ -64,6 +65,7 @@ function nextRound(){
     sequence = [...nextSequence]
     setTimeout(() => {
         yourTurn(level);
+        instructions.innerHTML = 'Your Turn!';
         console.log("Your Turn")
     }, level * 600 + 1000);
 }
@@ -73,6 +75,7 @@ function handleClick(tile) {
 
     if (humanSequence[index] != sequence[index]){
         resetGame('Oops! Game over, you pressed the wrong tile!');
+        instructions.innerHTML = 'You lose! Click start for new game!';
         return; 
     }
 
@@ -80,26 +83,30 @@ function handleClick(tile) {
     if (humanSequence.length === sequence.length) {
         if (humanSequence.length === 20){
             resetGame('Congrats! You completed all the levels!');
+            instructions.innerHTML = 'Wow Great Memory! Click start for new game!';
             return
         }
 
         humanSequence = [];
         console.log("Ok! Keep going!");
+        instructions.innerHTML = 'You have a good memory! Keep going!';
         setTimeout(() => {
             nextRound();
-        }, 1000);
+        }, 2000);
         return;
     }
+    instructions.innerHTML = `You have ${remainingClicks} clicks left`;
     console.log(`You have ${remainingClicks} clicks left`)
 }
 
 function startGame (){
     nextRound();
-    console.log("Wait for computer")
+    instructions.innerHTML = 'Wait for computer';
+    newGameBtn.classList.add('unclickable')
 }
 
-newGameBtn.addEventListener('click', startGame)
 
+newGameBtn.addEventListener('click', startGame)
 btnContainer.addEventListener('click', event => {
     const { tile } = event.target.dataset
 

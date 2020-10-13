@@ -1,3 +1,15 @@
+header {
+    background-size: cover;
+    text-align: center;
+    color: white;
+    padding: 40px; 
+    font-family: 'Architects Daughter', cursive;
+    font-size: 40px; 
+    background: black; 
+  }
+footer {
+    color: white; 
+}
 
 label, input {
     -webkit-appearance: none;
@@ -5,9 +17,11 @@ label, input {
   
   
   html, body {
-    background: #333;
+    background: #333; 
     height: 95%;
     width: 100%;
+    /* background: url("https://i.imgur.com/2ACqbG1.png"); */
+    
   }
   
   p {
@@ -127,90 +141,13 @@ label, input {
     cursor: pointer;
   }
   
-  .label {
-    position: absolute;
-    padding: 4px;
-    color: black;
+  .blink_me {
+    animation: blinker 2s linear infinite;
+    font-size: 40px;
   }
   
-  #score-screen {
-    position: relative;
-    margin-left: 7%;
-    margin-top: 3%;
-    font-family: 'VT323', mono;
-    font-size: 36px;
-    line-height: 44px;
-    text-align: center;
-    background: #000;
-    border: 2px inset rgba(0, 0, 0, 0.2);
-    border-radius: .1em;
-    box-shadow: 0 0 1.5em 0.1em rgba(0, 0, 0, 0.25) inset;
-    width: 1.2em;
-    height: 1em;
+  @keyframes blinker {
+    50% {
+      opacity: 0;
+    }
   }
-  
-  .btn-small {
-    margin: 14px;
-    width: 18px;
-    height: 18px;
-    border-radius: 100%;
-    border: 2px solid #343838;
-    box-shadow: 0 1px rgba(0, 0, 0, 0.4);
-    background: black;
-  }
-  
-  /* .strict-led {
-    vertical-align: top;
-    margin-top: 4px;
-    padding: 4px;
-    width: 4px;
-    height: 4px;
-    background-color: #460000;
-    border-radius: 100%;
-    border: 1px solid #343838;
-  } */
-  
-  /* #btn-reset {
-    background-color: #eec026;
-  }
-  
-  #btn-start {
-    background-color: #26b644;
-  }
-  
-  #btn-strict {
-    background-color: #d62626;
-  } */
-
-
-/* body{
-    background-color: grey;
-}
-.container {
-    display: flex; 
-    flex-direction: column;
-}
-header{
-    display: flex; 
-    justify-content: center;
-
-}
-gamestatus{
-    display: flex; 
-    flex-direction: column; 
-    align-items: space-around; 
-} 
-
- */
-
-header {
-    display: flex;
-    color: red;
-    justify-content: center;
-  }
-gamestatus { 
-     display: flex; 
-    flex-direction: column; 
-    align-items: space-around;
-
-}

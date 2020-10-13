@@ -4,18 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Simon!</title>
+    <!-- <img src = "https://i.imgur.com/PGGwL5kt.png"> -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div>
         <header>Welcome to Simon! Let's Play!</header>
         <main>
-            <gamestatus>
-                <user>Player 1</user>
-                <label for="file">Progress:</label>
-                <progress id="file" value="0" max="100"> O% </progress>
-                <button id="newGame">New Game!</button>
-            </gamestatus>
             <div class = "play-area">
                 <section class = "button-container js-container unclickable">
                 <div id="btn0" class="tile game-btn top-left" data-tile ="blue"></div>
@@ -28,8 +23,11 @@
                 <p class="game-title">Simon!</p>
                 <p class="start">Press to Start!</p>
             </div>
-
         </main>
+        <footer>
+            <p class = "Instructions blink_me"> </p>
+            Made By: Alex Overstreet
+        </footer>
     </div>
     <script src = "script.js"></script>
 </body>
