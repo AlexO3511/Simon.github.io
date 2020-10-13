@@ -3,7 +3,7 @@ header {
     text-align: center;
     color: white;
     padding: 40px; 
-    font-family: 'Architects Daughter', cursive;
+    font-family: "Comic Sans MS",cursive, sans-serif;
     font-size: 40px; 
     background: black; 
   }
@@ -20,7 +20,6 @@ label, input {
     background: #333; 
     height: 95%;
     width: 100%;
-    /* background: url("https://i.imgur.com/2ACqbG1.png"); */
     
   }
   
@@ -151,7 +150,7 @@ label, input {
       opacity: 0;
     }
   }
-sig {
+.Signature {
     display: flex; 
     justify-content: flex-end;
     align-content: flex-end;

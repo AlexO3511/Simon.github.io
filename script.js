@@ -87,7 +87,6 @@ function handleClick(tile) {
         }
 
         humanSequence = [];
-        console.log("Ok! Keep going!");
         instructions.innerHTML = 'You have a good memory! Keep going!';
         setTimeout(() => {
             nextRound();
@@ -95,7 +94,6 @@ function handleClick(tile) {
         return;
     }
     instructions.innerHTML = `You have ${remainingClicks} clicks left`;
-    console.log(`You have ${remainingClicks} clicks left`)
 }
 
 function startGame (){
