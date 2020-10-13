@@ -151,3 +151,9 @@ label, input {
       opacity: 0;
     }
   }
+sig {
+    display: flex; 
+    justify-content: flex-end;
+    align-content: flex-end;
+    align-self: baseline;
+}

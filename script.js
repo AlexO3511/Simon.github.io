@@ -5,7 +5,6 @@ let humanSequence = [];
 let level = 0;
 const instructions = document.querySelector('.Instructions')
 const currentLevel = document.querySelector('.Level')
-console.log(instructions)
 
 //const newGameBtn = document.querySelector('#newGame');
 const newGameBtn = document.querySelector('#game');
@@ -44,7 +43,6 @@ function playRound(nextSequence) {
 function nextStep() {
     const tiles = ['red', 'green', 'blue', 'yellow']
     const random = tiles[Math.floor(Math.random()* tiles.length)];
-    console.log(random);
 
     return random; 
 }
@@ -54,21 +52,20 @@ function nextRound(){
     level += 1;
     //Adds unclickable class until user turn
     btnContainer.classList.add('unclickable');
+
     //ES6 copy all eleemts in the 'sequence' array to 'nextSequence'
     const nextSequence = [...sequence];
     nextSequence.push(nextStep());
     playRound(nextSequence);
-    instructions.innerHTML = 'Wait for computer';
-    currentLevel.innerHTML = `Level ${level}`
+    instructions.innerHTML = 'Wait for computer!';
+    currentLevel.innerHTML = `Level ${level}/20`
 
-    console.log(level);
 
     //timeout will will execute yourTurn 1 second after last button in the sequence is activated
     sequence = [...nextSequence]
     setTimeout(() => {
         yourTurn(level);
         instructions.innerHTML = 'Your Turn!';
-        console.log("Your Turn")
     }, level * 600 + 1000);
 }
 function handleClick(tile) {
@@ -111,7 +108,7 @@ function startGame (){
 newGameBtn.addEventListener('click', startGame)
 btnContainer.addEventListener('click', event => {
     const { tile } = event.target.dataset
-
+    if (tile) activateTile(tile);
     if (tile) handleClick(tile);
 })
 
