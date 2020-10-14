@@ -1,3 +1,4 @@
+//Simon Game
 // These arrays are to keep track of sequence given and store User Sequence.
 let sequence = [];
 let humanSequence = [];
