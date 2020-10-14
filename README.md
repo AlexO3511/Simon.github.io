@@ -5,10 +5,10 @@ Simon is an all-ages web based memory game. In order to win the game you must re
 
 # Screenshots<br>
 ## Wireframe <br>
-[alt text](https://i.imgur.com/rZliAet.png) <br>
+![alt text](https://i.imgur.com/rZliAet.png) <br>
 
 ## Game <br>
-[alt text](https://i.imgur.com/CjmvmYW.png) <br>
+![alt text](https://i.imgur.com/CjmvmYW.png) <br>
 
 # User Stories <br>
 * As a user, I should be able to start a new Simon game. <br>
