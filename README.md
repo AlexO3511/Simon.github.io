@@ -16,7 +16,7 @@ Simon is an all-ages web based memory game. In order to win the game you must re
 * As a user, I should advance to next step each time I repeat the random series of random button presses.<br>
 * As a user, I should be prompted whether it is the computer's turn or my turn.<br>
 * As a user, I should be prompted how many more button presses I have during each level.<br>
-* As a user, If I press the wrong button then Ilose and have to start over from Level 1. <br>
+* As a user, If I press the wrong button then I lose and have to start over from Level 1. <br>
 * As a user, If I win all 20 levels I should be prompted with win message.<br>
 
 # Technology Used <br>
